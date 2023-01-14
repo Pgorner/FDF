@@ -28,15 +28,15 @@ SRC =		fdf.c						\
 
 OBJS =		$(SRC:.c=.o)
 
-LIBFT =	./42-libft/libft.a
+LIBFT =	./libft/libft.a
 MLX42 =	./MLX42/libmlx42.a
 
 $(NAME):	$(MLX42) $(LIBFT) $(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(MLX42) $(LIBFT) -o $(NAME) $(MLXFLAGS)
 
 $(LIBFT):
-			@if [ ! -d "libft" ]; then git clone https://github.com/Pgorner/42-libft.git; fi
-			@cd 42-libft && make && make clean
+			@if [ ! -d "libft" ]; then git clone https://github.com/Pgorner/libft.git; fi
+			@cd libft && make && make clean
 $(MLX42):
 			@if [ ! -d "MLX42" ]; then git clone https://github.com/codam-coding-college/MLX42.git; fi
 			@cd MLX42 && make
@@ -48,7 +48,7 @@ clean :
 
 fclean :	clean
 			@$(RM) $(NAME)
-			@$(RM) ./42-libft
+			@$(RM) ./libft
 			@$(RM) ./MLX42
 
 re :		fclean all

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:29:25 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/10 18:24:12 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/14 15:08:34 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define FDF_H
 # define WIDTH 1980
 # define HEIGHT 1200
-# include "42-libft/libft.h"
+# include "libft/libft.h"
 # include "MLX42/include/MLX42/MLX42.h"
 # include <limits.h>
 # include <fcntl.h>
