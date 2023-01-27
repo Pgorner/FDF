@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:48:52 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 17:35:00 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/25 14:26:30 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ int	main(int argc, char *argv[])
 
 	ms = malloc(sizeof(t_s));
 	i = argc;
-	ms->file = ft_strdup(argv[1]);
+
 	fd = open(argv[1], O_RDONLY);
 	set_values(ms);
 	get_input(ms, fd);
 	start_mlx(ms);
 	free_ms(ms);
 	close(fd);
-	system("leaks fdf");
+	//system("leaks fdf");
+	//safe_exit(ms);
 	return (0);
 }

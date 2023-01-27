@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:36:36 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 18:15:02 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/25 14:22:14 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,19 @@ void	z(t_s *ms)
 	while (i <= ms->height)
 		ms->z[i++] = ft_calloc(sizeof(int), ms->width*ms->height);
 	i = 0;
-	while (i < ms->height -1)
+	while (i < ms->height)
 	{
 		j = 0;
 		while (j < ms->width)
 		{
-			ms->z[i][j] = ft_atoi(ms->map[k]);
-			k++;
-			++j;
+			ms->z[i][j] = ft_atoi(ms->map[k++]);
+			//printf("%s\n", ms->map[k]);
+/* 			printf("i %i\n", i);
+			printf("ft_atoi(ms->map[k]):%s\n", ms->map[k]); */
+			j++;
 		}
-		++i;
+
+		i++;
 	}
 }
 
@@ -49,7 +52,7 @@ void	x(t_s *ms)
 	k = 0;
 	ms->x = ft_calloc(sizeof(int), ms->width*ms->height);
 	while (i <= ms->height)
-		ms->x[i++] = ft_calloc(sizeof(int), ms->width);
+		ms->x[i++] = ft_calloc(sizeof(int), ms->width + 1);
 	i = 0;
 	while (i < ms->height)
 	{
@@ -148,6 +151,7 @@ void	get_input(t_s *ms, int fd)
 	while (i)
 	{
 		tmp = ft_strtrim(ms->line, "\n");
+		printf("%s", tmp);
 		free(ms->line);
 		val = ft_strjoin2(val, " ");
 		c++;
@@ -158,7 +162,10 @@ void	get_input(t_s *ms, int fd)
 		i = ms->line;
 		ms->height++;
 	}
+	val = ft_strjoin2(val, " ");
 	ms->map = ft_split(val, ' ');
+		printf("%s\n", ms->map[207]);
+		printf("%s\n", ms->map[208]);
 	ms->sX = (WIDTH/2 - ((ms->width/2)* ms->offset));
 	ms->sY = (HEIGHT/2 - ((ms->height/2)* ms->offset));
 	z(ms);

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:17:15 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/10 17:45:22 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:49:26 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,9 +132,10 @@ void	free_ms(t_s *ms)
 			/* free(ms->z[i]); */
 		++i;
 	}
+
 	free(ms->x);
 	free(ms->y);
-/* 	free(ms->z); */
+
 /* 	free(ms->file); */
 }
 
@@ -143,7 +144,7 @@ void	safe_exit(t_s *ms)
 	mlx_close_window(ms->mlx);
 	mlx_terminate(ms->mlx);
 	free_ms(ms);
-	system("leaks fdf");
+	//system("leaks fdf");
 	exit(EXIT_SUCCESS);
 }
 
