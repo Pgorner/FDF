@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:29:25 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/14 15:08:34 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/02/15 15:04:23 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,7 @@
 # include <unistd.h>
 # include <memory.h>
 # include <math.h>
-//==============================================================================
-//-------------------------------DEFINED_VALUES---------------------------------
-//==============================================================================
-//-----------------------------------FLAGS--------------------------------------
-/* # define */
-//----------------------------------RETURNS-------------------------------------
-/* # define */
+
 //==============================================================================
 //----------------------------------STRUCTS-------------------------------------
 //==============================================================================
@@ -55,12 +49,12 @@ typedef struct ms
 	int			size;
 	int			**x;
 	int			**y;
-	int			bX;
-	int			eX;
-	int			bY;
-	int			eY;
-	int			sX;
-	int			sY;
+	int			bx;
+	int			ex;
+	int			by;
+	int			ey;
+	int			sx;
+	int			sy;
 	double		ang;
 }	t_s;
 
@@ -72,10 +66,13 @@ int		main(int argc, char *argv[]);
 void	get_input(t_s *ms, int fd);
 int		start_mlx(t_s *ms);
 void	set_values(t_s *ms);
-void	draw_line(t_s *ms);
+void	draw_line(t_s *ms, int i, int j);
 void	draw_raster(t_s *ms);
 void	x(t_s *ms);
 void	y(t_s *ms);
 void	z(t_s *ms);
 void	free_ms(t_s *ms);
+void	safe_exit(t_s *ms);
+void	key_input(void *tmp);
+void	draw(t_s *ms);
 #endif
