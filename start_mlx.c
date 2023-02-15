@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:17:15 by pgorner           #+#    #+#             */
-/*   Updated: 2023/02/15 15:08:31 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/02/15 16:19:01 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	draw(t_s *ms)
 	j = -1;
 	while (++j < ms->height)
 	{
-		i = 0;
-		while (i++ < ms->width)
+		i = -1;
+		while (++i < ms->width)
 		{
 			values(ms, i, j, 1);
 			if (i < ms->width - 1)
